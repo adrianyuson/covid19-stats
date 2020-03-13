@@ -6,6 +6,7 @@ import './index.css';
 class App extends Component {
     state = {
       countries: [],
+      updateTime: '',
     }
   
     componentDidMount() {
@@ -21,6 +22,7 @@ class App extends Component {
         // console.log(response.countries_stat[0].country_name); //test
         this.setState({
           countries: response.countries_stat,
+          updateTime: response.statistic_taken_at,
         })
       })
       .catch(err => {
@@ -29,14 +31,14 @@ class App extends Component {
     }
   
     render() {
-      const { countries } = this.state
+      const { countries, updateTime } = this.state
       return (
         <div className="App">
           <header className="App-header">
-            <p>Placeholder</p>
+            <h2>Covid-19 Global Stats</h2>
           </header>
-          <h1>List</h1>
-          <div class="container">
+          <div className="container">
+            <p>Updated at <strong>{updateTime}</strong></p>
             <Table countryData={ countries }/>
           </div>
         </div>

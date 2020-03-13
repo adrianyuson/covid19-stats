@@ -4,13 +4,14 @@ const TableHeader = () => {
     return (
       <thead>
         <tr>
+          <th>Rank</th>
           <th>Country</th>
           <th>Cases</th>
           <th>Deaths</th>
-          <th>Region</th>
-          <th>Total Recovered</th>
-          <th>New Deaths</th>
-          <th>New Cases</th>
+          {/* <th>Region</th> */}
+          <th>Recovered</th>
+          {/* <th>New Deaths</th> */}
+          {/* <th>New Cases</th> */}
           <th>Serious Critial Condition</th>
         </tr>
       </thead>
@@ -21,14 +22,15 @@ const TableBody = props => {
     const rows = props.countryData.map((row, index) => {
                 return (
                     <tr key={index}>
+                        <td>{index + 1}</td>
                         <td>{row.country_name}</td>
                         <td>{row.cases}</td>
-                        <td>{row.deaths}</td>
-                        <td>{row.region}</td>
-                        <td>{row.total_recovered}</td>
-                        <td>{row.new_deaths}</td>
-                        <td>{row.new_cases}</td>
-                        <td>{row.serious_critical}</td>
+                        <td className="deaths">{row.deaths}</td>
+                        {/* <td>{row.region}</td> */}
+                        <td className="recovered">{row.total_recovered}</td>
+                        {/* <td classNaime="deaths">{row.new_deaths}</td> */}
+                        {/* <td>{row.new_cases}</td> */}
+                        <td className="criticalCondition">{row.serious_critical}</td>
                     </tr>
                 )
             })
@@ -40,8 +42,8 @@ class Table extends Component {
         const { countryData } = this.props;
         return (
             <table>
-            <TableHeader />
-            <TableBody countryData={ countryData }/>
+                <TableHeader />
+                <TableBody countryData={ countryData }/>
             </table>
         )
     }

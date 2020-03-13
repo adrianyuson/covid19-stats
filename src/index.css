@@ -7,7 +7,53 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+.App {
+  text-align: center;
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 10vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 5vh;
+  color:white;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+table, th, td {
+  border: 1px solid black;
+  text-align: center;
+  border-collapse: collapse;
+  padding: 10px;
+}
+
+table {
+  margin-top: 3px;
+}
+
+.recovered {
+  color: green;
+}
+
+.deaths {
+  color: red;
+}
+
+.criticalCondition {
+  color: rgb(148, 121, 0);
 }
