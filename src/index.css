@@ -9,6 +9,7 @@ body {
 
 .App {
   text-align: center;
+  /* font-size: 3vh; */
 }
 
 .App-header {
@@ -42,12 +43,16 @@ table, th, td {
   padding: 10px;
 }
 
+.rank {
+  font-weight: bold;
+}
+
 table {
   margin-top: 3px;
 }
 
 .recovered {
-  color: green;
+  color: rgb(0, 179, 80);
 }
 
 .deaths {
@@ -56,4 +61,8 @@ table {
 
 .criticalCondition {
   color: rgb(148, 121, 0);
+}
+
+.canada {
+  font-weight: 900;
 }

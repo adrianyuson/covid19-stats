@@ -22,8 +22,12 @@ const TableBody = props => {
     const rows = props.countryData.map((row, index) => {
                 return (
                     <tr key={index}>
-                        <td>{index + 1}</td>
-                        <td>{row.country_name}</td>
+                        <td className="rank">{index + 1}</td>
+                        { row.country_name === "Canada" 
+                            ? <td className="canada">{row.country_name}</td>
+                            : <td>{row.country_name}</td>
+                        }
+                        {/* <td>{row.country_name}</td> */}
                         <td>{row.cases}</td>
                         <td className="deaths">{row.deaths}</td>
                         {/* <td>{row.region}</td> */}
