@@ -19,6 +19,11 @@ const TableHeader = () => {
 }
 
 const TableBody = props => {
+    props.countryData.sort(function(a, b){
+        return parseInt(b.cases.replace(/,/g, '')) - 
+               parseInt(a.cases.replace(/,/g, '')); //API data is not sorted
+    });
+    console.log(props);
     const rows = props.countryData.map((row, index) => {
                 return (
                     <tr key={index}>
