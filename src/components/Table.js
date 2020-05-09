@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 
 const TableHeader = () => {
     return (
@@ -41,7 +41,7 @@ const TableBody = props => {
                 <td className="criticalCondition">{row.serious_critical}</td>
             </tr>
         )
-    })
+            })
     return <tbody>{rows}</tbody>
 }
 
@@ -57,19 +57,14 @@ const TableBody = props => {
 //     }
 // }
 
-const Table = (props) => { // functional component 
-    const { characterData, removeCharacter } = props;
-  
-    const rows = characterData.map((row, index) => {
-                return (
-                    <p key={index}>
-                        {row.country_name} the {row.cases}
-                        <button onClick={() => removeCharacter(index)}>Delete</button>
-                    </p>
-                    
-                  )
-            })
-    return <line>{rows}</line>
-  }
+const Table = (props) => { // functional component version
+    const { countryData } = props;
+    return (
+        <table>
+            <TableHeader />
+            <TableBody countryData={ countryData }/>
+        </table>
+    )
+}
 
 export default Table

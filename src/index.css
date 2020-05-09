@@ -59,6 +59,10 @@ table {
   color: red;
 }
 
+.mortality {
+  color: brown;
+}
+
 .criticalCondition {
   color: rgb(148, 121, 0);
 }
